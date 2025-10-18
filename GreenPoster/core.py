@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 from importlib import resources
 
 def get_default_font_path() -> str:
-    return str(resources.files("greenposter") / "fonts" / "NotoSansJP-Black.otf")
+    return str(resources.files("GreenPoster") / "fonts" / "NotoSansJP-Black.otf")
     
 # Define a reusable type for color input:
 # Either a fixed RGB list, a callable that computes color dynamically,
