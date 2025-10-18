@@ -247,7 +247,7 @@ class GreenPoster():
 
   def test(self):
       img=draw_sample_img()
-      res=green_poster.read_green(img)
+      res=self.read_green(img)
       for r in res:
         img=self.write_chars(img, "あア亜１A", r["x"], r["y"], r["h"])
       return img  
