@@ -5,7 +5,11 @@ from PIL import Image, ImageDraw, ImageFont
 from typing import Union, Tuple, List, Union, Callable, Optional
 import toml
 from pydantic import BaseModel, Field
+from importlib import resources
 
+def get_default_font_path() -> str:
+    return str(resources.files("greenposter") / "fonts" / "NotoSansJP-Black.otf")
+    
 # Define a reusable type for color input:
 # Either a fixed RGB list, a callable that computes color dynamically,
 # or None (default color)
@@ -150,7 +154,7 @@ class GreenPoster():
               ):
     self.lower_green = np.array(lower_green_hsv)  
     self.upper_green = np.array(upper_green_hsv)
-    self.default_font = default_font
+    self.default_font = get_default_font_path()
     self.default_color = [0,0,0]
 
   def read_green(self, img_or_path: Union[str, np.ndarray, Image.Image]) -> List[dict]:
