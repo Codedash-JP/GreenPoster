@@ -16,3 +16,6 @@ license-files = ["LICENSE", "OFL.txt"]
 
 [tool.setuptools.package-data]
 GreenPoster = ["fonts/*.ttf", "fonts/*.otf"]
+
+[tool.setuptools.include-package-data]
+include-package-data = true
