@@ -1,6 +1,6 @@
 [project]
 name = "GreenPoster"
-version = "0.1.1"
+version = "0.1.2"
 description = "..."
 readme = "README.md"
 requires-python = ">=3.8"
@@ -15,4 +15,4 @@ build-backend = "setuptools.build_meta"
 license-files = ["LICENSE", "OFL.txt"]
 
 [tool.setuptools.package-data]
-greenposter = ["fonts/*.ttf", "fonts/*.otf"]
+GreenPoster = ["fonts/*.ttf", "fonts/*.otf"]
