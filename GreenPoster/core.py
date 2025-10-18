@@ -6,9 +6,17 @@ from typing import Union, Tuple, List, Union, Callable, Optional
 import toml
 from pydantic import BaseModel, Field
 from importlib import resources
+import matplotlib as mpl
+import matplotlib.font_manager as fm
 
 def get_default_font_path() -> str:
-    return str(resources.files("GreenPoster") / "fonts" / "NotoSansJP-Black.otf")
+  font_path = fm.findfont(
+      mpl.rcParams["font.sans-serif"][0], 
+      fallback_to_default=True
+  )
+  return font_path
+
+
     
 # Define a reusable type for color input:
 # Either a fixed RGB list, a callable that computes color dynamically,
@@ -259,8 +267,8 @@ class GreenPoster():
   def test2(self):
       img=draw_sample_img()
       multiple_texts=MultiTextDrawParams(texts=[
-          TextDrawParams(text="主題タイトルABC",x=50,y=50,height=51),
-          TextDrawParams(text="文字abc",x=400,y=670,height=30, color=[100,100,100])
+          TextDrawParams(text="Here is the title ABC",x=50,y=50,height=51),
+          TextDrawParams(text="abc etc",x=400,y=670,height=30, color=[100,100,100])
       ])
       img=self.apply_text_draw_params(img, multiple_texts)
       return img
